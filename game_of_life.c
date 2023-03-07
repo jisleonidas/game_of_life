@@ -41,7 +41,7 @@ void generate_next_step(int grid[SIZE][SIZE])
 	alive = 0;
 
 	for (i = 0; i < SIZE; i++) {
-		for (j = 0; j < SIZE; i++) {
+		for (j = 0; j < SIZE; j++) {
 			alive = alive_around_point(grid, i, j);
 			if (grid[i][j] == TRUE)
 				if (!(alive == 2 || alive == 3))
