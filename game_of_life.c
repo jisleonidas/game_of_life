@@ -1,14 +1,13 @@
 #include <stdio.h>
 
-#define HSIZE 100
-#define VSIZE 100
+#define SIZE 100
 
 int main()
 {
 	int i, j;
-	int grid[HSIZE][VSIZE];
+	int grid[SIZE][SIZE];
 
-	for (i = 0; i < HSIZE; i++)
-		for (j = 0; j < VSIZE; j++)
+	for (i = 0; i < SIZE; i++)
+		for (j = 0; j < SIZE; j++)
 			grid[i][j] = 0;
 }
