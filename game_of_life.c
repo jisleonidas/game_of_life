@@ -37,17 +37,23 @@ void display_grid(int grid[SIZE][SIZE])
 
 void generate_next_step(int grid[SIZE][SIZE])
 {
-	int i, j, alive;
-	alive = 0;
+	int i, j, cur_alive;
+	int alive[SIZE][SIZE];
 
 	for (i = 0; i < SIZE; i++) {
 		for (j = 0; j < SIZE; j++) {
-			alive = alive_around_point(grid, i, j);
+			alive[i][j] = alive_around_point(grid, i, j);
+		}
+	}
+
+	for (i = 0; i < SIZE; i++) {
+		for (j = 0; j < SIZE; j++) {
+			cur_alive = alive[i][j];
 			if (grid[i][j] == TRUE)
-				if (!(alive == 2 || alive == 3))
+				if (!(cur_alive == 2 || cur_alive == 3))
 					grid[i][j] = FALSE;
 			else
-				if (alive == 3)
+				if (cur_alive == 3)
 					grid[i][j] = TRUE;
 		}
 	}
