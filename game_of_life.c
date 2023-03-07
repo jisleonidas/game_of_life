@@ -49,12 +49,14 @@ void generate_next_step(int grid[SIZE][SIZE])
 	for (i = 0; i < SIZE; i++) {
 		for (j = 0; j < SIZE; j++) {
 			cur_alive = alive[i][j];
-			if (grid[i][j] == TRUE)
+			if (grid[i][j] == TRUE) {
 				if (!(cur_alive == 2 || cur_alive == 3))
 					grid[i][j] = FALSE;
-			else
+			}
+			else {
 				if (cur_alive == 3)
 					grid[i][j] = TRUE;
+			}
 		}
 	}
 }
