@@ -5,6 +5,7 @@
 
 #define SIZE 100
 
+void display_grid(int grid[SIZE][SIZE]);
 void generate_next_step(int grid[SIZE][SIZE]);
 int alive_around_point(int grid[SIZE][SIZE], int i, int j);
 
@@ -16,12 +17,27 @@ int main()
 	for (i = 0; i < SIZE; i++)
 		for (j = 0; j < SIZE; j++)
 			grid[i][j] = 0;
+
+	display_grid(grid);
+}
+
+void display_grid(int grid[SIZE][SIZE])
+{
+	int i, j;
+
+	for (i = 0; i < SIZE; i++) {
+		for (j = 0; j < SIZE; j++)
+			if (grid[i][j] == TRUE)
+				printf("*");
+			else
+				printf(".");
+		printf("\n");
+	}
 }
 
 void generate_next_step(int grid[SIZE][SIZE])
 {
-	int i, j, k, l, alive;
-	int start_i, end_i, start_j, end_j;
+	int i, j, alive;
 	alive = 0;
 
 	for (i = 0; i < SIZE; i++) {
@@ -44,7 +60,7 @@ int alive_around_point(int grid[SIZE][SIZE], int i, int j)
 
 	for (k = i - 1; k <= i + 1; k++) {
 		for (l = j - 1; l <= j + 1; l++){
-			if (i < 0 || i >= SIZE || j < 0 || j >= SIZE)
+			if (k < 0 || k >= SIZE || l < 0 || l >= SIZE)
 				continue;
 			if (k == i && l == j)
 				continue;
