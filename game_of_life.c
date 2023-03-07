@@ -2,6 +2,8 @@
 
 #define SIZE 100
 
+void generate_next_step(int grid[SIZE][SIZE]);
+
 int main()
 {
 	int i, j;
@@ -10,4 +12,9 @@ int main()
 	for (i = 0; i < SIZE; i++)
 		for (j = 0; j < SIZE; j++)
 			grid[i][j] = 0;
+}
+
+void generate_next_step(int grid[SIZE][SIZE])
+{
+	;
 }
