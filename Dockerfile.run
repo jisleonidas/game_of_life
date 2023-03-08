@@ -9,4 +9,6 @@ COPY game_of_life.c .
 
 RUN gcc game_of_life.c -o game_of_life
 
+RUN dnf remove -y gcc && dnf autoremove -y
+
 ENTRYPOINT ["./game_of_life"]
