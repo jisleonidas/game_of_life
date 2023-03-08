@@ -90,7 +90,7 @@ int alive_around_point(int grid[SIZE][SIZE], int i, int j)
 
 	for (k = i - 1; k <= i + 1; k++) {
 		for (l = j - 1; l <= j + 1; l++) {
-			if (0 <= k < SIZE && 0 <= l < SIZE) {
+			if (0 <= k && k < SIZE && 0 <= l && l < SIZE) {
 				if (k == i && l == j)
 					continue;
 				if (grid[k][l] == TRUE)
