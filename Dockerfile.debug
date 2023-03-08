@@ -1,0 +1,14 @@
+# Debug on podman.
+FROM public.ecr.aws/docker/library/almalinux:9
+
+RUN dnf install -y gcc
+
+RUN dnf install -y gdb
+
+WORKDIR /app
+
+COPY game_of_life.c .
+
+RUN gcc -ggdb game_of_life.c -o game_of_life
+
+ENTRYPOINT ["gdb", "./game_of_life"]
