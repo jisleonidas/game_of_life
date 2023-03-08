@@ -1,0 +1,12 @@
+# Compile and run on podman.
+FROM public.ecr.aws/docker/library/almalinux:9
+
+RUN dnf install -y gcc
+
+WORKDIR /app
+
+COPY game_of_life.c .
+
+RUN gcc game_of_life.c -o game_of_life
+
+ENTRYPOINT ["./game_of_life"]
