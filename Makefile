@@ -13,5 +13,5 @@ debug: $(SRC)
 .PHONY: docker_build
 
 docker_build: Dockerfile.debug Dockerfile.run
-	$(DOCKER) build -t game_of_life:debug -f Dockerfile.debug
-	$(DOCKER) build -t game_of_life:run -f Dockerfile.run
+	$(DOCKER) build -t game_of_life_debug:latest -f Dockerfile.debug
+	$(DOCKER) build -t game_of_life_run:latest -f Dockerfile.run
