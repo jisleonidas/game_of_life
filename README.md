@@ -22,10 +22,12 @@ Compile the source code using a C compiler for Windows (such as the Visual Studi
 ## Usage
 
 Type a 5x5 grid pattern with **ONLY** 0s and 1s at the prompt. Example pattern:
+```
 10111
 00101
 11000
 00011
 11011
+```
 
 See the magic unfold!
