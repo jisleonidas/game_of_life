@@ -26,11 +26,12 @@ void display_grid(int grid[SIZE][SIZE])
 	int i, j;
 
 	for (i = 0; i < SIZE; i++) {
-		for (j = 0; j < SIZE; j++)
+		for (j = 0; j < SIZE; j++) {
 			if (grid[i][j] == TRUE)
 				printf("*");
 			else
 				printf(".");
+		}
 		printf("\n");
 	}
 }
