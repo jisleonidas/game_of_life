@@ -3,7 +3,7 @@
 #define TRUE 1
 #define FALSE 0
 
-#define SIZE 100
+#define SIZE 50
 
 void display_grid(int grid[SIZE][SIZE]);
 void generate_next_step(int grid[SIZE][SIZE]);
